@@ -6,14 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-    crossorigin="anonymous" />
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <title>Document</title>
 </head>
 
 <body>
+    <div id="app" class="container">
+        <div class="logo">
+
+        </div>
+
+        <div class="new-todo">
+    
+        </div>
+        <div class="todos-container">
+            <ul v-if='todos.length > 0'>
+                <li v-for='(todo, index) in todos'>{{index + ':'+todo}}
+                    <i class="fas fa-times" @click =  'deleteTodo(index)':title = 'index'></i>
+                </li>
+            </ul>
+            <h3 v-else>Hai finito le cose da fare, rilassati!</h3>
+        </div>
+    </div>
+
+
+
     <script src="js/script.js"></script>
 </body>
 
