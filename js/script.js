@@ -30,6 +30,9 @@ var app = new Vue({
         },
         allDelete(todosDelete){
             this.todosDelete.splice(0,todosDelete.length);
+        },
+        finalDelete(index){
+            this.todosDelete.splice(index,1)
         }
     }
 

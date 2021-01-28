@@ -38,7 +38,7 @@
             <ul>
                 <li v-for='(todo, index) in todosDelete'>{{index + 1 +') '+todo}}
                     <i class="fas fa-window-restore" @click='restoreTodo(index)'></i>
-                    <i class="fas fa-times" @click='allDelete()' ></i>
+                    <i class="fas fa-times" @click='finalDelete(index)' ></i>
                 </li>
             </ul>
         </div>
