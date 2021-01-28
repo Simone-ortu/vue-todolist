@@ -27,6 +27,9 @@ var app = new Vue({
         restoreTodo(index){
             this.todos.push(this.todosDelete[index]);
             this.todosDelete.splice(index,1)
+        },
+        allDelete(todosDelete){
+            this.todosDelete.splice(0,todosDelete.length);
         }
     }
 

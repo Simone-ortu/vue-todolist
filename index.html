@@ -33,12 +33,12 @@
             </ul>
             <h3 v-else>Hai finito le cose da fare, rilassati!</h3>
         </div>
-        <h2>Lista cose fatte</h2>
+        <h2>Lista cose fatte <i class="fas fa-times" @click='allDelete(todosDelete)' ></i></h2>
         <div class="todos-container">
             <ul>
                 <li v-for='(todo, index) in todosDelete'>{{index + 1 +') '+todo}}
                     <i class="fas fa-window-restore" @click='restoreTodo(index)'></i>
-                    <i class="fas fa-times"></i>
+                    <i class="fas fa-times" @click='allDelete()' ></i>
                 </li>
             </ul>
         </div>
