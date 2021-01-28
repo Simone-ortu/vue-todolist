@@ -1,7 +1,8 @@
 var app = new Vue({
-    el:'#app',
-    data:{
-        todos:[
+    el: '#app',
+    data: {
+        newTodo:'',
+        todos: [
             'Fare la spesa',
             'Fare le commissioni',
             'Preparare la cena',
@@ -9,11 +10,23 @@ var app = new Vue({
         ],
         todosDelete: []
     },
-    methods:{
-        deleteTodo(index){
-            this.todos.splice(index,1)
-            this.todosDelete.push(this.todos[index])
+    methods: {
+        addTodo(){
+            if(this.newTodo.length < 4){
+                alert('la lunghezza deve essere maggiore di 3 caratteri')
+            }else{
+            this.todos.push(this.newTodo);
+            this.newTodo='';}
 
+        },
+        deleteTodo(index) {
+            this.todosDelete.push(this.todos[index]);
+            this.todos.splice(index, 1);
+
+        },
+        restoreTodo(index){
+            this.todos.push(this.todosDelete[index]);
+            this.todosDelete.splice(index,1)
         }
     }
 

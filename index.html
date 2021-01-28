@@ -21,15 +21,26 @@
         </div>
 
         <div class="new-todo">
-    
+            <input type="text" @keyup.enter= 'addTodo' v-model='newTodo' placeholder="inserisci un dato">
+            <button @click='addTodo'>inserisci</button>
+
         </div>
         <div class="todos-container">
             <ul v-if='todos.length > 0'>
-                <li v-for='(todo, index) in todos'>{{index + ':'+todo}}
-                    <i class="fas fa-times" @click =  'deleteTodo(index)':title = 'index'></i>
+                <li v-for='(todo, index) in todos'>{{index + 1 +') '+todo}}
+                    <i class="fas fa-times" @click='deleteTodo(index)' :title='index'></i>
                 </li>
             </ul>
             <h3 v-else>Hai finito le cose da fare, rilassati!</h3>
+        </div>
+        <h2>Lista cose fatte</h2>
+        <div class="todos-container">
+            <ul>
+                <li v-for='(todo, index) in todosDelete'>{{index + 1 +') '+todo}}
+                    <i class="fas fa-window-restore" @click='restoreTodo(index)'></i>
+                    <i class="fas fa-times"></i>
+                </li>
+            </ul>
         </div>
     </div>
 
