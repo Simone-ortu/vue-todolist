@@ -15,8 +15,9 @@
 </head>
 
 <body>
-    <div id="app" class="container">
+    <div id="app" class="container clearfix">
         <div class="logo">
+            <img src="https://i.pinimg.com/originals/e2/a7/21/e2a721b23b3e5e8a541ff3fdffe8fd7a.png" alt="logo">
 
         </div>
 
@@ -33,7 +34,7 @@
             </ul>
             <h3 v-else>Hai finito le cose da fare, rilassati!</h3>
         </div>
-        <h2>Lista cose fatte <i class="fas fa-times" @click='allDelete(todosDelete)' ></i></h2>
+        <h2>Lista cose fatte <i class="fas fa-trash" @click='allDelete(todosDelete)' ></i></h2>
         <div class="todos-container">
             <ul>
                 <li v-for='(todo, index) in todosDelete'>{{index + 1 +') '+todo}}
